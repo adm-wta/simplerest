@@ -1,6 +1,7 @@
 /**
  * Created by adm-wta on 8/25/15.
  */
+    
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -17,9 +18,9 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;
 
 // middleware to use for all requests
-router.use(function(req, res, next) {
-
-    console.log('Something is happening.');
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
