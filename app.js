@@ -80,7 +80,7 @@ router.route('/gods/:god_id')
                 if (err)
                     res.send(err);
 
-                res.json({ message: 'God updated!' });
+                res.json(god);
             });
 
         });
