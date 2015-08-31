@@ -73,9 +73,9 @@ router.route('/gods/:god_id')
                 res.send(err);
             console.log("This is the God found with that ID in MongoDB " + god);
 
-            console.log(req.body.name);
+            god.name = req.body.name;
 
-            //console.log(god.name);
+            
 
             // save the god
             god.save(function(err) {
