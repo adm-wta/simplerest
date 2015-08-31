@@ -64,12 +64,14 @@ router.route('/gods/:god_id')
     })
     .put(function(req, res) {
 
+        console.log("PUT got Id: " + req.params.god_id);
+
         // use our bear model to find the bear we want
         God.findById(req.params.god_id, function(err, god) {
 
             if (err)
                 res.send(err);
-            console.log("This is the God found with that ID in MongoDB " + god.name);
+            console.log("This is the God found with that ID in MongoDB " + god);
 
             console.log(req.body.name);
 
