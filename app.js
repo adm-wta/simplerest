@@ -39,7 +39,7 @@ router.route('/gods')
             if (err)
                 res.send(err);
 
-            res.json({ message: 'God created!' });
+            res.json(god);
         });
 
     })
